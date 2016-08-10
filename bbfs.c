@@ -41,6 +41,7 @@
 #include <sys/xattr.h>
 #endif
 
+#include "dictionary.h"
 #include "log.h"
 
 //  All the paths I see are relative to the root of the mounted
@@ -330,7 +331,7 @@ int bb_open(const char *path, struct fuse_file_info *fi)
 // returned by read.
 int bb_read(const char *path, char *buf, size_t size, off_t offset, struct fuse_file_info *fi)
 {
-    int retstat = 0;
+    // int retstat = 0;
     
     log_msg("\nbb_read(path=\"%s\", buf=0x%08x, size=%d, offset=%lld, fi=0x%08x)\n",
 	    path, buf, size, offset, fi);
@@ -353,7 +354,7 @@ int bb_read(const char *path, char *buf, size_t size, off_t offset, struct fuse_
 int bb_write(const char *path, const char *buf, size_t size, off_t offset,
 	     struct fuse_file_info *fi)
 {
-    int retstat = 0;
+    // int retstat = 0;
     
     log_msg("\nbb_write(path=\"%s\", buf=0x%08x, size=%d, offset=%lld, fi=0x%08x)\n",
 	    path, buf, size, offset, fi

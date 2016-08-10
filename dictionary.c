@@ -29,10 +29,10 @@ arreglo_t dict_find(dict_t dict, const char *key, arreglo_t def) {
     if (idx == -1 ) {
        return def;
     }
-    arreglo_t ret = (arreglo_t)malloc(sizeof(arreglo_s));
-    ret->elementos = malloc(sizeof(char)*dict->entry[idx].length);
-    memcpy(ret->elementos, dict->entry[idx].value, dict->entry[idx].length);
-    ret->length = dict->entry[idx].length;
+    int len = dict->entry[idx].length;
+    int element_size = sizeof(char);
+    arreglo_t ret = arreglo_new(len, element_size);
+    memcpy(arreglo_elementos(ret), dict->entry[idx].value, dict->entry[idx].length);
     return ret;
 }
 
