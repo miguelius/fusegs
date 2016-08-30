@@ -13,6 +13,7 @@ Para eso se implemento un TAD diccionario (o map clave valor) y un TAD arreglo p
 Se recomienda usar Ubuntu 14 y los siguientes requerimientos:
 
 * build-essentials
+* pkg-config
 * libfuse
 * valgrind (para hacer pruebas y encontrar errores de manejo de memoria)
 
